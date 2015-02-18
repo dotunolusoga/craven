@@ -1,0 +1,34 @@
+doctype html(lang='en-US')
+head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title My Title
+    link(rel='stylesheet', href='styles/normalize.css')
+    link(rel='stylesheet', href='styles/skeleton.css')
+    link(rel='stylesheet', href='css/main.css')
+
+body
+    //if lt IE 9
+      script(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
+
+    .container
+
+      .row
+        .headerContainer.twelve.columns
+          img(src="http://i.imgur.com/g6ccn.jpg")
+
+          h1 craVen
+
+          .login
+            h1 Check In
+            form
+              input(type='text', name='username', placeholder='user', required='required')
+              input(type='password', name='password', required='required')
+              button.register REGISTER
+              input.loginButton(type='submit', name='login', value='LOGIN')
+
+    script(src='vendor/jquery.min.js')
+    script(src='vendor/lodash.min.js')
+    script(src='vendor/firebase.js')
+    script(src='js/main.js')
