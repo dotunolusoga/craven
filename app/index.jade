@@ -3,30 +3,39 @@ head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    title My Title
+    title craVen
+    link(rel='stylesheet', href='./vendor/foundation.css')
     link(rel='stylesheet', href='styles/normalize.css')
-    link(rel='stylesheet', href='styles/skeleton.css')
     link(rel='stylesheet', href='css/main.css')
 
 body
     //if lt IE 9
       script(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
 
-    .container
+    .container.large-centered
 
       .row
-        .headerContainer.twelve.columns
+        .headerContainer.large-10.columns
           img(src="http://i.imgur.com/g6ccn.jpg")
 
           h1 craVen
+          .row
+            .login.large-6.columns.large-centered
+                h1 Check In
+                form
+                  input(type='text', name='username', placeholder='user', required='required')
+                  input(type='password', name='password', required='required')
+                  button.register REGISTER
+                  input.loginButton(type='submit', class="button", name='login', value='LOGIN')
 
-          .login
-            h1 Check In
-            form
-              input(type='text', name='username', placeholder='user', required='required')
-              input(type='password', name='password', required='required')
-              button.register REGISTER
-              input.loginButton(type='submit', name='login', value='LOGIN')
+
+        .row
+          .statusContainer.large-10.columns
+            h1 Tsundoku Status
+              #bookStatus
+              button.addToShelf ADD BOOK TO SHELF
+              button.shelf SEE FULL SHELF
+
 
     script(src='vendor/jquery.min.js')
     script(src='vendor/lodash.min.js')

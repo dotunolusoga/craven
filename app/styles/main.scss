@@ -17,18 +17,21 @@
 
 .login {
   text-align: center;
-  font-size: 0.9em;
-
-  input {
-    padding: 5%;
-
+  border: 1px solid lightgray;
   }
-}
+
 .hidden {
   display: none;
 }
 
 .login h1 {
-  font-size: 1.1em;
+  font-size: 0.9em;
 }
 
+.button {
+  margin: 5px;
+}
+
+.statusContainer {
+  border: 1px solid lightgray;
+}
