@@ -24,17 +24,42 @@ body
                 h1 Check In
                 form
                   input(type='text', name='username', placeholder='user', required='required')
-                  input(type='password', name='password', required='required')
+                  input(type='password', name='password', placeholder='****' required='required')
                   button.register REGISTER
-                  input.loginButton(type='submit', class="button", name='login', value='LOGIN')
-
+                  button.loginButton LOGIN
 
         .row
-          .statusContainer.large-10.columns
+          .statusContainer.large-10.columns.hidden
             h1 Tsundoku Status
-              #bookStatus
-              button.addToShelf ADD BOOK TO SHELF
-              button.shelf SEE FULL SHELF
+            #bookStatus
+            button.addToShelf ADD BOOK
+            button.shelf SEE FULL SHELF
+
+        .row
+          .addBookProfile.large-10.columns.hidden
+            h1 Add New Book
+            .row
+              .bookCover.small-10.columns
+                label(for="coverimage") Cover Art
+                input(type="url" name="coverimage" placeholder="www.pictureurl.com")#coverUrl
+              .imgUrl.small-2.columns
+                button#coverImage +
+              .appendedCoverArt
+              
+            .bookDetails
+              label(for="title") Title
+              input(type="text" name="title" placeholder="Game Of Thrones")#title
+              label(for="author") Author
+              input(type="text" name="author" placeholder="George R. R. Martin")#author
+              label ADD TO APPROPRIATE SHELF
+              button#beingRead BEING READ
+              button#toRead TO READ
+              button#toBuy TO BUY
+            .row
+              .doneButton.small-6.columns
+                button#done DONE
+              .resetButton.small-6.columns
+                button#reset RESET
 
 
     script(src='vendor/jquery.min.js')
