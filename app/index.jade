@@ -43,22 +43,23 @@ body
                 label(for="coverimage") Cover Art
                 input(type="url" name="coverimage" placeholder="www.pictureurl.com")#coverUrl
               .imgUrl.small-2.columns
-                button#coverImage +
-              .appendedCoverArt
-              
+                button#coverImage.
+                  +
+            .appendedCoverArt
+
             .bookDetails
               label(for="title") Title
               input(type="text" name="title" placeholder="Game Of Thrones")#title
               label(for="author") Author
               input(type="text" name="author" placeholder="George R. R. Martin")#author
               label ADD TO APPROPRIATE SHELF
-              button#beingRead BEING READ
-              button#toRead TO READ
-              button#toBuy TO BUY
+              button#beingReadButton BEING READ
+              button#toReadButton TO READ
+              button#toBuyButton TO BUY
             .row
-              .doneButton.small-6.columns
+              .doneButton.large-6.columns
                 button#done DONE
-              .resetButton.small-6.columns
+              .resetButton.large-6.columns
                 button#reset RESET
 
 

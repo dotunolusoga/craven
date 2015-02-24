@@ -73,6 +73,12 @@ var $tbody = $('#tbody'),
     }
   });
 
+
+
+/////////////////////////////////////////////////
+//////////// Book Shelf SetUp //////////////////
+////////////////////////////////////////////////
+
   $('.addToShelf').click(function(evt) {
     evt.preventDefault();
     $('.statusContainer').toggleClass('hidden');
@@ -101,3 +107,74 @@ $submitCoverImage.click(function() {
   $coverReset.click(function(evt) {
     location.reload(true);
   });
+
+//Book Save to Shelf
+
+var $beingReadButton = $('#beingReadButton');
+
+$beingReadButton.click(function(){
+  beingRead(fb.getAuth().uid);
+  $('#coverUrl').empty();
+  $('#title').empty();
+  $('#author').empty();
+});
+
+function beingRead(uid) {
+  var bookDetailFb  = new Firebase(FIREBASE_URL + '/users/' + uid + '/booksBeingRead');
+  var $img    = $('#coverUrl').val();
+  var $title  = $('#title').val();
+  var $author = $('#author').val();
+
+  var bookObject = { coverImage: $img, bookTitle: $title, bookAuthor: $author }
+  bookDetailFb.push(bookObject);
+  return bookObject;
+}
+
+var $toReadButton = $('#toReadButton');
+
+$toReadButton.click(function(){
+  toRead(fb.getAuth().uid);
+  $('#coverUrl').empty();
+  $('#title').empty();
+  $('#author').empty();
+});
+
+function toRead(uid) {
+  var bookDetailFb  = new Firebase(FIREBASE_URL + '/users/' + uid + '/booksToRead');
+  var $img    = $('#coverUrl').val();
+  var $title  = $('#title').val();
+  var $author = $('#author').val();
+
+  var bookObject = { coverImage: $img, bookTitle: $title, bookAuthor: $author }
+  bookDetailFb.push(bookObject);
+  return bookObject;
+}
+
+var $toBuyButton = $('#toBuyButton');
+
+$toBuyButton.click(function(){
+  toBuy(fb.getAuth().uid);
+  $('#coverUrl').empty();
+  $('#title').empty();
+  $('#author').empty();
+});
+
+function beingRead(uid) {
+  var bookDetailFb  = new Firebase(FIREBASE_URL + '/users/' + uid + '/booksToBuy');
+  var $img    = $('#coverUrl').val();
+  var $title  = $('#title').val();
+  var $author = $('#author').val();
+
+  var bookObject = { coverImage: $img, bookTitle: $title, bookAuthor: $author }
+  bookDetailFb.push(bookObject);
+  return bookObject;
+}
+
+
+
+
+
+
+
+
+
